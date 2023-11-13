@@ -28,7 +28,7 @@ export default function GameDetails() {
             formData.get('comment')
         );
 
-        console.log(newComment);
+        setComments(state => [...state, newComment]);
     }
 
     return (
@@ -47,8 +47,8 @@ export default function GameDetails() {
                 <div className="details-comments">
                     <h2>Comments:</h2>
                     <ul>
-                        {comments.map(({ username, text }) => (
-                            <li className="comment">
+                        {comments.map(({ _id, username, text }) => (
+                            <li key={_id} className="comment">
                                 <p>{username}: {text}</p>
                             </li>
                         ))}
