@@ -15,13 +15,15 @@ export const getOne = async (gameId) => {
 }
 
 export const getLatest = async () => {
-    const query = new URLSearchParams({
-        // sortBy: `_createdOn desc`,
-        offset: 0,
-        pageSize: 3,
-    });
+    // const query = new URLSearchParams({
+    //     sortBy: `_createdOn desc`,
+    //     offset: 0,
+    //     pageSize: 3,
+    // });
 
-    const result = await request.get(`${baseUrl}?${query}`);
+    const query = encodeURIComponent(`offset=0&pageSize=3`);
+    console.log(query);
+    const result = await request.get(`${baseUrl}?sortBy=_createdOn%20desc&${query}`);
 
     return result;
 }

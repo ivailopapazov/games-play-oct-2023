@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "firebase deploy",
+    "build:deploy": "npm run build && npm run deploy"
   },
   "dependencies": {
     "react": "^18.2.0",
